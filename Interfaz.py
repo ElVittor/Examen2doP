@@ -26,7 +26,7 @@ entryAM=tk.Entry(ventana, textvariable=AM)
 entryAM.pack()
 
 AñoNac=IntVar()
-etiquetaAñoNac=tk.Label(ventana,text="Año de Nacimiento \n INgresar Año en Formato: AAAA")
+etiquetaAñoNac=tk.Label(ventana,text="Año de Nacimiento \n Ingresar Año en Formato: AAAA")
 etiquetaAñoNac.pack()
 entryAñoNac=tk.Entry(ventana, textvariable=AñoNac)
 entryAñoNac.pack()
@@ -36,8 +36,12 @@ etiquetacarrera=tk.Label(ventana,text="Carrera ")
 etiquetacarrera.pack()
 entrycarrera=tk.Entry(ventana, textvariable=carrera)
 entrycarrera.pack()
-"""
-generador=generador(nombre,AP,AM,AñoNac,carrera)
-generar=tk.Button(ventana,text="Generar Matricula :D",comand=generador.generar)
-generar.pack()"""
+
+matricula=tk.StringVar()
+etiquetamatricula = tk.Label(ventana, textvariable=matricula)
+etiquetamatricula.pack()
+
+generador=generador(entrynombre,entryAP,entryAM,entryAñoNac,entrycarrera,matricula)
+generar=tk.Button(ventana,text="Generar Matricula :D",command=generador.generar)
+generar.pack()
 ventana.mainloop()
